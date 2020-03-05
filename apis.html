@@ -3,8 +3,10 @@ layout: page
 title: Find an API
 ---
 
-<ul class="api-list">
+<ul class="api-list"></ul>
 
-</ul>
-
-<script type="text/javascript" src="assets/js/list.js"></script>
+<script type="text/javascript">
+(async function() {
+  window.apigov.buildAPIList();
+})();
+</script>
