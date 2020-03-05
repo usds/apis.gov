@@ -23,7 +23,3 @@ url: "http://usds.github.io/apis.gov"
 markdown: kramdown
 
 theme: uswds-jekyll
-
-sass:
-  sass_dir: assets/_sass
-  style: compressed
