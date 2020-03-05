@@ -33,3 +33,10 @@ For an API registry product, some feature requests we got:
 
 Feature | Popularity (1-5) | User type | Notes
 --- | --- | --- | --- 
+How are the APIs connected? | | | Do some APIs share data elements that I can join on? Are some APIs built off of other APIs? How are the APIs connected and how can I utilize those connections in my own product? Which APIs can I use the same API key for?
+What APIs are trending or popular? | | |
+"If you like this API, you might like..." recommendations | | | This might help people fidn APIs that are connected.
+Community can rate or comment on quality of API (e.g. data quality) | | |
+Dark mode | | Engineers |
+VI  mode with hotkeys | | Engineers |
+How much data is available in an API and how representative of the entire population is it? | | | Not sure how you'd determine the latter.
