@@ -1,0 +1,81 @@
+{
+  "name": "APIs.gov",
+  "description": "This is an inventory of US government APIs currntly maintained by the US Digital Service.",
+  "image":"https://www.usds.gov/assets/img/usds-logo-footer.svg",
+  "tags": [
+    "government",
+    "API",
+    "US",
+    "US Digital Service",
+    "USDS"
+  ],
+  "created": "2020-03-05",
+  "modified": "220-03-05",
+  "url": "https://usds.github.io/apis.gov/apis.json",
+  "specificationVersion": "0.15",
+  "apis": [
+    {
+      "name": "Data at the Point of Care",
+      "description": "Data at the Point of Care is a pilot API program that enables healthcare providers to deliver high quality care directly to Medicare beneficiaries by making a patient’s Medicare claims data available to the provider for treatment needs. The information can be accessed in the existing workflow and without logging into another application or portal. Claims information can be used to confirm information, fill in gaps in care, and improve patient safety.",
+      "image": "https://dpc.cms.gov/assets/top-nav-heart-5fe16cc0fca21cb303b25f95b38070b7d93f452f09e9892eec874353a4482988.svg",
+      "humanURL": "https://dpc.cms.gov/",
+      "baseURL": "https://sandbox.dpc.cms.gov/api",
+      "tags": [
+        "medicare",
+        "claims",
+        "health",
+        "cms",
+        "fhir",
+        "hhs"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://dpc.cms.gov/users/sign_up"
+        },
+        {
+          "type": "OpenAPI",
+          "url": "https://sandbox.dpc.cms.gov/api/swagger"
+        },
+        {
+          "type": "FHIR-IG",
+          "url": "https://dpc.cms.gov/ig/index.html"
+        }
+      ],
+      "contact": [
+        {
+          "email": "info@dpc.cms.gov"
+        }
+      ]
+    },
+    {
+      "name": "Address Information - USPS Web Tools",
+      "description": "Provides access to APIs that are being tracked across the API Evangelist network.",
+      "humanURL": "https://www.usps.com/business/web-tools-apis/address-information-api.htm",
+      "baseURL": "https://secure.shippingapis.com",
+      "tags": [
+        "USPS",
+        "address",
+        "post"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://registration.shippingapis.com/"
+        }
+      ],
+      "contact": [
+        {
+          "X-contact": "https://emailus.usps.com/",
+          "phone": "1-800-344-7779"
+        }
+      ]
+    }
+  ],
+  "maintainers": [
+    {
+      "FN": "Shelby",
+      "email": "shelby.switzer@cms.hhs.gov"
+    }
+  ]
+}
