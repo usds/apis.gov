@@ -35,8 +35,7 @@
     const response = await fetch('apis.json');
     const data = await response.json();
     window.localStorage.setItem('apiListUpdateTime', Date.now());
-    addDataLocally(data);
-    return data;
+    return addDataLocally(data);
   }
   
   function addDataLocally(data) {
@@ -45,6 +44,7 @@
       apiList[hash(api.baseURL)] = api;
     });
     window.localStorage.setItem('apiData', JSON.stringify(apiList));
+    return apiList;
   }
   
   function hash(apiUrl) {
