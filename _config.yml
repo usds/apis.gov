@@ -21,3 +21,5 @@ url: "http://usds.github.io/apis.gov"
 
 # Build settings
 markdown: kramdown
+
+theme: uswds-jekyll
