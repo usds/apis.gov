@@ -7,7 +7,7 @@ Info | Popularity (1-5) | User type | Notes
 --- | --- | --- | ---
 Access (open, must apply, internal, etc) | 5 | All | At least just saying if this is open or not would be valuable. For procurmeent/product folks, this info can help get stakeholder buy-in. 
 Keywords/tags/categories | 5 | All |
-Who uses it? | 4 | PMs, Procurement, Engineers | For PMs and procurement, this info might help you understand if this API is relevant for you. They want to know what agencies use this. One engineer suggested that you could go ask other consumers about the developer experience and how good the API is. PMs also want to know how it's working for other people. 
+Who uses it? | 4 | All | For PMs and procurement, this info might help you understand if this API is relevant for you. They want to know what agencies use this. One engineer suggested that you could go ask other consumers about the developer experience and how good the API is. PMs also want to know how it's working for other people. 
 Auth | 4 | Engineers | Maybe overlaps with "Access" info
 Pricing models | 4 | All | Maybe overlaps with "Access" info
 Format | 4 | Engineers | This could be response format like JSON/XML/Protobuff or architectural style like REST/SOAP/GraphQL. Some users disagreed with this, saying that format isn't necessary because they will use an API if it's relevant regardless of format
@@ -35,7 +35,7 @@ Feature | Popularity (1-5) | User type | Notes
 --- | --- | --- | --- 
 How are the APIs connected? | | | Do some APIs share data elements that I can join on? Are some APIs built off of other APIs? How are the APIs connected and how can I utilize those connections in my own product? Which APIs can I use the same API key for?
 What APIs are trending or popular? | | |
-"If you like this API, you might like..." recommendations | | | This might help people fidn APIs that are connected.
+"If you like this API, you might like..." recommendations | | | This might help people find APIs that are connected.
 Community can rate or comment on quality of API (e.g. data quality) | | |
 Dark mode | | Engineers |
 VI  mode with hotkeys | | Engineers |
