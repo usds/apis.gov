@@ -12,12 +12,12 @@
 #   links: primary
 #
 primary:
-  - text: Find APIs
+  - text: Find an API
     href: /apis.html
   - text: APIs.json
     href: /apis.json
   - text: Submit an API
-    href: '#'
+    href: /submit.html
 
 # docs:
 #   - text: Sidenav Documentation
