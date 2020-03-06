@@ -26,11 +26,81 @@ async function createPullRequestToAddDocumentToApisJson(document) {
   // Create the new branch
   const newBranchMetadata = await createNewBranch(branchName, commitSha);
 
-  const newApisJsonBlob = await uploadDocumentAsBlob(document);
+  const apisJson = await fetchApisJson(commitSha);
+  apisJson.apis.push(document);
+
+  const newApisJsonBlob = await uploadDocumentAsBlob(apisJson);
 
   // Tree stuff
 
+  const newCommit = await createNewCommit(commitSha, treeSha);
+
+  const newBranchHead = await updateBranchHead(branchName, newCommit.sha);
+
 };
+
+function updateBranchHead(branchName, commitSha) {
+  return new Promise((resolve, reject) => {
+    const request = https.request(
+      {
+        ...BASE_OPTIONS,
+        headers: {
+          ...BASE_OPTIONS.headers,
+          'Content-Type': 'application/json',
+        },
+        method: 'PATCH',
+        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/refs/heads/${branchName}`
+      },
+      response => {
+        digestApiResponseIntoJson(response)
+          .then(resolve)
+          .catch(reject);
+      }
+    );
+
+    request.on('error', reject);
+
+    request.write(JSON.stringify({sha: commitSha}));
+
+    request.end();
+  });
+}
+
+function createNewCommit(parentCommitSha, treeSha) {
+  return new Promise((resolve, reject) => {
+    const request = https.request(
+      {
+        ...BASE_OPTIONS,
+        headers: {
+          ...BASE_OPTIONS.headers,
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/commit`
+      },
+      response => {
+        digestApiResponseIntoJson(response)
+          .then(resolve)
+          .catch(reject);
+      }
+    );
+
+    request.on('error', reject);
+
+    request.write(JSON.stringify({
+      message: 'Update apis.json with new API submission',
+      tree: treeSha,
+      parents: [parentCommitSha],
+      author: {
+        name: 'apis.gov submissions bot',
+        email: 'fake@notreal.net',
+        date: (new Date).toISOString(),
+      }
+    }));
+
+    request.end();
+  });
+}
 
 function uploadDocumentAsBlob(document) {
   return new Promise((resolve, reject) => {
