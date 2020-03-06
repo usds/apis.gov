@@ -1,8 +1,13 @@
+const {STATIC_SITE_ORIGIN} = require('./constants');
 const {httpError} = require('./httpError');
 const {isValidApisJsonDocument} = require('../validator');
 
 const MAX_UPLOAD_SECONDS = 120;
 const MAX_DOCUMENT_SIZE = 2 * 1024 * 1024;
+const ERROR_HEADERS = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': STATIC_SITE_ORIGIN,
+}
 
 exports.path = '/';
 exports.method = 'POST';
@@ -10,7 +15,7 @@ exports.handlerFunc = (req, res) => {
   try {
     validateRequestHeaders(req);
   } catch (e) {
-    res.writeHead(e.statusCode || 400, {'Content-Type': 'application/json'});
+    res.writeHead(e.statusCode || 400, ERROR_HEADERS);
     res.end(JSON.stringify({message: e.message}));
     return;
   }
@@ -26,11 +31,11 @@ exports.handlerFunc = (req, res) => {
 
       throw httpError('Submitted API JSON did not match the schema', 422);
     }).then(parsedAndValidated => {
-      res.writeHead(200, {'Content-Type': 'application/json'});
+      res.writeHead(200, ERROR_HEADERS);
       res.end(JSON.stringify(parsedAndValidated));
     }).catch(err => {
       console.error(err);
-      res.writeHead(err.statusCode || 500, {'Content-Type': 'application/json'});
+      res.writeHead(err.statusCode || 500, ERROR_HEADERS);
       res.end(JSON.stringify({message: err.message}));
     });
 };
