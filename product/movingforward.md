@@ -8,7 +8,7 @@ Here are a couple of blog posts that talk about the basic problem we were trying
 2. <a href="https://apievangelist.com/2017/07/27/state-of-apis-in-the-federal-government/">State of APIs in the Federal Government</a>
 
 ### User Research and Validation (please!)
-While the hackathon team that explored this idea and gave birth to this prototype did a cursory round of user research with the people present in the room from other teams, in order to really address the problems we've identified and create a product that offers value, more research is needed. Some questions to consider:
+While the hackathon team that explored this idea and gave birth to this prototype did a cursory round of user research with the people present in the room from other teams (you can find that <a href="https://github.com/usds/apis.gov/blob/master/product/User-Research.md">here</a>), in order to really address the problems we've identified and create a product that offers value, more research is needed. Some questions to consider:
   * Did we identify the right audiences?
   * What are users really looking for from an API directory/registry?
   * What do the workflows in various angencies look like to add an apis.json file to their sites?
