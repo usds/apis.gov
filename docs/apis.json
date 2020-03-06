@@ -160,6 +160,153 @@
       ]
     },
     {
+      "name": "trade.gov Consolidated Screening List API",
+      "description": "The Consolidated Screening List API consolidates export screening lists of the Departments of Commerce, State and the Treasury into a single data feed as an aid to industry in conducting electronic screens of potential parties to regulated transactions.In the event that a company, entity or person on the list appears to match a party potentially involved in an export transaction, additional due diligence should be conducted before proceeding. There may be a strict export prohibition, requirement for seeking a license application, evaluation of the end-use or user to ensure it does not result in an activity prohibited by any U.S. export regulations, or other restriction. For more information view the informational video from the National Customs Brokers. The API only contains active entities on the list. For historical research, please reference the sources directly.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=ConsolidatedScreeningListAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/consolidated_screening_list",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "screening",
+        "trade",
+        "exports"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov De Minimis API",
+      "description": "The De Minimis API provides data about the De Minimis amount and the Value Added Tax (VAT) amount that products may be subject to when exported to foreign countries. De Minimis is the threshold for a product's value below which no duty or tariff is charged. Furthermore, products below the De Minimis undergo minimal clearance procedures, such as customs and paperwork requirements. Similarly, the value of the exported products must exceed the VAT amount before it is subject to VAT. The API includes De Minimis and VAT amounts for almost 80 countries in that country’s currency.\n",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=DeMinimisAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/de_minimis",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "VAT",
+        "tax",
+        "duties",
+        "tariffs"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov FAQs on Exporting API",
+      "description": "The Frequently Asked Questions (FAQs) API includes more than 200 commonly asked questions about exporting. The answers provided are from government experts that specialize in unique aspects of trade.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=FAQsOnExportingAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/ita_faqs\n",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "FAQ",
+        "questions",
+        "answers",
+        "trade",
+        "exports"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov FTA Tariff Rates API",
+      "description": "The FTA Tariff Rates API provides data about each country with whom the United States has a Free Trade Agreement (FTA). When the U.S. enters into an FTA with a foreign government, it negotiates lower tariff rates with that government for a wide variety of products. A tariff is a tax that a company must pay a foreign country when shipping a product to that country. Typically the FTA tariffs rates decline over several years. The API provides information on tariff rates for the following countries: Australia, Bahrain, Chile, Colombia, Costa Rica, Dominican Republic, El Salvador, Guatemala, Honduras, Morocco, Nicaragua, Oman, Panama, Peru, Singapore, and South Korea. Products are indicated by their HS-6 code. Because the North American Free Trade Agreement (NAFTA) tariff rates have declined to zero, Canada and Mexico data is not included. Similarly, the tariff rates for almost all products shipped to Israel and Jordon have declined to zero and are not included here.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=FTATariffRatesAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/tariff_rates",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "tariffs",
+        "trade"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov ITA Offices and Centers API",
+      "description": "The ITA Offices & Centers API provides contact and address information for all of ITA's domestic and international export assistance centers. There are almost 200 ITA centers worldwide whose locations are managed by ITA's internal office management system.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=ITAOfficesAndCentersAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/ita_office_locations",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "offices",
+        "addresses",
+        "contact information",
+        "exports",
+        "trade"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov ITA Trade Events API",
+      "description": "The Trade Events API provides data on events for U.S. businesses interested in selling their products and services overseas. These events include industry conferences, webinars, lectures, and trade missions organized by ITA and other trade agencies.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=TradeEventsAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/trade_events",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "trade",
+        "events",
+        "conferences",
+        "exports",
+        "webinars"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov Zip Code to USEAC API",
+      "description": "The Zip Code to USEAC API provides direct access to the U.S. Export Assistance Centers (USEACs) that have been assigned to all of the 40,000+ zip codes in the United States. It’s not enough to do a proximity search for a zip code and a USEAC. Each center has specialists on hand for each particular region.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=ZipCodeToUseacAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/ita_zipcode_to_post",
+      "tags": [
+        "trade.gov",
+        "Department of Commerce",
+        "commerce",
+        "trade",
+        "exports",
+        "assistance",
+        "zip codes"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
       "name": "CPSC Violations & NEISS Data",
       "description": "The Consumer Product Safety Commission Violations & NEISS Data API combines all of the Letters of Advice (LOA) Data and National Electronic Injury Surveillance System (NEISS) Data information into one finalized data set with hospital report information and violation of mandatory standard.",
       "humanURL": "https://api.cpsc.gov/",
@@ -183,7 +330,7 @@
           "email": "abc@data.gov"
         }
       ]
-    }
+    },
     {
       "name": "HHS Media Services API",
       "description": "With the HHS Feed Request API, you can subscribe to news feeds on HHS. The feed interface requires a feed ID, which is generated on a per-feed basis in the storefront.",
