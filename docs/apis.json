@@ -159,6 +159,31 @@
         }
       ]
     }
+    {
+      "name": "HHS Media Services API",
+      "description": "With the HHS Feed Request API, you can subscribe to news feeds on HHS. The feed interface requires a feed ID, which is generated on a per-feed basis in the storefront.",
+      "humanURL": "https://api.digitalmedia.hhs.gov/",
+      "baseURL": "https://api.digitalmedia.hhs.gov/",
+      "tags": [
+        "cms",
+        "hhs",
+        "health",
+        "media",
+        "news",
+        "campaigns"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": ""
+        }
+      ],
+      "contact": [
+        {
+          "email": "abc@hhs.gov"
+        }
+      ]
+    }
   ],
   "maintainers": [
     {
