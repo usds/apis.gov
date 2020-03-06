@@ -1,7 +1,7 @@
 {
   "name": "APIs.gov",
   "description": "This is an inventory of US government APIs currntly maintained by the US Digital Service.",
-  "image": "https://www.usds.gov/assets/img/usds-logo-footer.svg",
+  "image":"https://www.usds.gov/assets/img/usds-logo-footer.svg",
   "tags": [
     "government",
     "API",
@@ -31,7 +31,7 @@
       "properties": [
         {
           "type": "X-signup",
-          "url": "https://airtable.com/shrMbfFSRZkTcSAof"
+          "url": "https://dpc.cms.gov/users/sign_up"
         },
         {
           "type": "OpenAPI",
