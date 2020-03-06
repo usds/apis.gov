@@ -1,0 +1,5 @@
+(executable
+ (name validation)
+ (libraries js_of_ocaml js_of_ocaml-ppx ppx_deriving_yojson.runtime cohttp)
+ (preprocess (pps ppx_deriving_yojson js_of_ocaml-ppx))
+ (modes js))

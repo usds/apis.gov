@@ -18,13 +18,6 @@ let list_unique l =
     | [] -> acc
   in aux [] l starting_state
 
-module Validator = struct 
-
-  (** TODO: Implement Validation of API Config Record *)
-  let validate config = print_endline config
-
-end
-
 module Catalog = struct
 
   exception CouldNotReachDotGovRegistry of string
@@ -48,7 +41,7 @@ module Catalog = struct
       Lwt_list.iter_p (fun uri ->
           Client.get uri >>= fun (_, resp_body) ->
             resp_body |> Cohttp_lwt.Body.to_string >|= fun body ->
-            Validator.validate body
+            print_endline body
       ) config_uris)
 end
 
