@@ -18,6 +18,8 @@ Then `cd` into `/catalog` and run:
 
 `dune external-lib-deps --missing .`
 
+(at this point follow the command line for all `opam install`s)
+
 `dune build`
 
 It should at this point generate an executable. For the sake of simplicity, call it like: 
@@ -25,3 +27,69 @@ It should at this point generate an executable. For the sake of simplicity, call
 
 PS: if you'd like to do development, please: 
 `opam install merlin`
+
+
+# Validating the ApiRecords: 
+
+First, you'll need some prerequisites: 
+
+`brew install opam` (The OCaml Package manager & ecosystem)
+
+Then once that is finished (be sure to follow the homebrew instructions for OPAM after installing): 
+
+`opam install dune`
+
+Then `cd` into `/validation` and run:
+
+`dune external-lib-deps --missing .`
+
+(at this point follow the command line for all `opam install`s)
+
+PS: if you'd like to do development, please: 
+`opam install merlin`
+
+`dune build`
+
+It should at this point generate a Javascript file. For the sake of simplicity, call it like: 
+` node ./_build/default/validation.bc.js`
+
+Or play with it in the REPL to invoke functions, like: 
+
+`cp ./_build/default/validation.bc.js ./_build/default/validation.js`
+`node`
+...then inside node:
+```javascript
+const ValidatorModule = require("./_build/default/validation");
+```
+```javascript
+ValidatorModule.BrowserValidator.is_valid('{"name":"foo", "description":"some foo", "human_url":"http://foo.human.com", "base_url":"http://foo.com", "image": "", "version": "", "tags": [], "properties": [], "maintainers": { "fullname":"", "email":"", "url":"", "org":"", "address":"", "telephone":"","x_twitter":"", "x_github":"", "photo":"", "v_card":""}, "include": []}');
+```
+## API Record JSON format: 
+
+```json
+{
+	"name": "foo",
+	"description": "some foo",
+	"url": "http://foo.com",
+	"human_url": "http://foo.human.com",
+	"base_url": "http://foo.com",
+	"image": "",
+	"version": "",
+	"tags": [],
+	"properties": [],
+	"maintainers": {
+		"fullname": "",
+		"email": "",
+		"url": "",
+		"org": "",
+		"address": "",
+		"telephone": "",
+		"x_twitter": "",
+		"x_github": "",
+		"photo": "",
+		"v_card": ""
+	},
+	"include": []
+}
+```
+* Optional values are stringly typed, by empty string. Yes, this is trash and yes, I feel bad about it.
