@@ -12,7 +12,7 @@
 #   links: primary
 #
 primary:
-  - text: What is this?
+  - text: About
     href: /about
   - text: APIs.json
     href: /apis.json
