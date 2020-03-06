@@ -158,6 +158,31 @@
           "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
         }
       ]
+    },
+    {
+      "name": "FOIA.gov API",
+      "description": "Agencies of the federal government submit information about their FOIA process in a machine-readable format to the Portal. This information is availble through the Agency component API.",
+      "humanURL": "https://www.foia.gov/developer/",
+      "baseURL": "https://api.foia.gov/api/agency_components",
+      "tags": [
+        "submit",
+        "foia",
+        "request",
+        "search",
+        "",
+        ""
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://api.data.gov/"
+        }
+      ],
+      "contact": [
+        {
+          "email": "abc@foia.gov"
+        }
+      ]
     }
   ],
   "maintainers": [
