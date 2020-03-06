@@ -14,8 +14,8 @@ You can discover government APIs published by numerous agencies within the feder
 You can also submit APIs to be added to the registry.
 
 ## What APIs are in the registry?
-Check them out <a href="/apis.gov/">here!</a> You can also find the machine-readable format <a href="/apis.json">here</a>.
+Check them out <a href="/apis.gov/">here!</a> You can also find the machine-readable format <a href="/apis.gov/apis.json">here</a>.
 
 ## How do I submit an API to the registry?
-There are two ways to get APIs added to this registry. By creating an apis.json file and hosting it at the root of your agency web site, we can scrape the information and add it for you -- please see our own <a href="/apis.json">apis.json</a> file for an example of how to format your own.. You can also submit your API to us with <a href="https://usds.github.io/apis.gov/submit.html">this form</a>. In either case, a human reviewer will receive the submission and approve them for addition to the registry.
+There are two ways to get APIs added to this registry. By creating an apis.json file and hosting it at the root of your agency web site, we can scrape the information and add it for you -- please see our own <a href="/apis.gov/apis.json">apis.json</a> file for an example of how to format your own.. You can also submit your API to us with <a href="https://usds.github.io/apis.gov/submit.html">this form</a>. In either case, a human reviewer will receive the submission and approve them for addition to the registry.
 
