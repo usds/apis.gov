@@ -29,11 +29,18 @@
     let listItems = '';
 
     Object.keys(data).forEach((hash) => {
+      var tags = data[hash].tags;
+      var tagHTML = '';
+
+      tags.forEach(tag => {
+        tagHTML+= `<span class="usa-tag">${tag}</span>`
+      });
+
       listItems += `<li class="api-entry margin-top-5">
       <div class="grid-row">
         <div class="grid-col-3"><a href="${data[hash].humanURL}" target="_blank">${data[hash].name}</a></div>
         <div class="grid-col-fill">${data[hash].description}</div>
-        <div class="grid-col-3">${data[hash].tags}</div>
+        <div class="grid-col-3">${tagHTML}</div>
       </div>
       </li>`
     });
