@@ -166,7 +166,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/consolidated_screening_list",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "screening",
         "trade",
@@ -186,7 +186,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/de_minimis",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "VAT",
         "tax",
@@ -207,7 +207,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/ita_faqs\n",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "FAQ",
         "questions",
@@ -229,7 +229,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/tariff_rates",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "tariffs",
         "trade"
@@ -248,7 +248,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/ita_office_locations",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "offices",
         "addresses",
@@ -270,7 +270,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/trade_events",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "trade",
         "events",
@@ -292,7 +292,7 @@
       "baseURL": "https://api.trade.gov/gateway/v1/ita_zipcode_to_post",
       "tags": [
         "trade.gov",
-        "Department of Commerce",
+        "DoC",
         "commerce",
         "trade",
         "exports",
