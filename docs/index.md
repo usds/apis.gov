@@ -4,7 +4,7 @@ title: APIs.gov Registry
 ---
 
 
-<h2 class="text-center">Find publicly available APIs offered by Federal Government Agencies</h2>
+<h2 class="text-center">Find public APIs offered by Federal Government Agencies</h2>
 
 <section>
   <div class="grid-row">
