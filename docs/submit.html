@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Submit an API
+title: Submit an API to APIs.gov
 ---
 
 <form accept-charset="UTF-8" class="api-submit" action="#">
 
-  <input type="text" name="name" placeholder="Name of API">
-  <input type="text" name="description" placeholder="Description">
-  <input type="text" name="image" placeholder="URL of Image (e.g. logo)">
-  <input type="text" name="humanURL" placeholder="URL of the human-readable docs or homepage for the API">
-  <input type="text" name="baseURL" placeholder="Base URL of the API">
+  <input type="text" name="name" required="required" placeholder="Name of API (required)">
+  <input type="text" name="description" required="required" placeholder="Description (required)">
+  <input type="url" name="image" placeholder="URL of Image (e.g. logo)">
+  <input type="url" name="humanURL" required="required" placeholder="URL of the human-readable docs or homepage for the API (required)">
+  <input type="url" name="baseURL" placeholder="Base URL of the API">
   <input type="text" name="tags" placeholder="Tags (separate with commas)">
 
   <input type="hidden" name="utf8" value="✓">
