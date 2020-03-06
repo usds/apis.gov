@@ -1,3 +1,3 @@
 module.exports = {
-  STATIC_SITE_ORIGIN: '*', // replace me with the real URL plz!
+  STATIC_SITE_ORIGIN: process.env.STATIC_SITE_ORIGIN || 'https://usds.github.io',
 };
