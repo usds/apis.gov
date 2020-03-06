@@ -140,6 +140,24 @@
           "email": "bluebuttonapi@cms.hhs.gov "
         }
       ]
+    },
+    {
+      "name": "trade.gov - Busines Services Providers API",
+      "description": "The Business Service Providers (BSP) API is a directory of U.S. and foreign-based businesses providing services that many small and medium sized exporters require to succeed in foreign markets. Businesses can sign up to be a Service Provider on export.gov.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=BusinessServiceProvidersAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/business_service_providers",
+      "tags": [
+        "trade.gov",
+        "service providers",
+        "business",
+        "exports"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
     }
   ],
   "maintainers": [
