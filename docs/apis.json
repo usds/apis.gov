@@ -70,6 +70,76 @@
           "phone": "1-800-344-7779"
         }
       ]
+    },
+    {
+      "name": "Beneficiary Claims Data API",
+      "description": "Shared Savings Program ACOs can use this FHIR-based API to retrieve bulk Medicare claims data related to their assignable or prospectively assigned beneficiaries.",
+      "humanURL": "https://bcda.cms.gov/",
+      "baseURL": "https://sandbox.bcda.cms.gov/",
+      "tags": [
+        "medicare",
+        "claims",
+        "health",
+        "cms",
+        "fhir",
+        "hhs",
+        "aco"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://registration.shippingapis.com/"
+        }
+      ]
+    },
+    {
+      "name": "Blue Button 2.0",
+      "description": "A developer-friendly, standards-based API that enables Medicare beneficiaries to connect their claims data to the applications, services and research programs they trust. Blue Button 2.0 from CMS is an API that contains four years of Medicare Part A, B and D data for 53 million Medicare beneficiaries.",
+      "humanURL": "https://bluebutton.cms.gov/",
+      "baseURL": "https://bluebutton.cms.gov/",
+      "tags": [
+        "cms",
+        "hhs",
+        "health",
+        "medicare",
+        "claims",
+        "fhir"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://bluebutton.cms.gov/developers/#production-api-access"
+        }
+      ],
+      "contact": [
+        {
+          "email": "bluebuttonapi@cms.hhs.gov "
+        }
+      ]
+    },
+    {
+      "name": "Finder API",
+      "description": "The API behind Finder.Healthcare.gov that helps you find private health plans available outside the Health Insurance Marketplace.",
+      "humanURL": "https://developer.cms.gov/finder-api/",
+      "baseURL": "https://api.finder.healthcare.gov/v3.0/",
+      "tags": [
+        "cms",
+        "hhs",
+        "health",
+        "marketplace",
+        "insurance"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://bluebutton.cms.gov/developers/#production-api-access"
+        }
+      ],
+      "contact": [
+        {
+          "email": "bluebuttonapi@cms.hhs.gov "
+        }
+      ]
     }
   ],
   "maintainers": [
