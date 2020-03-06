@@ -1,3 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+catalog/_build
+catalog/.merlin
+validation/_build
+validation/.merlin
