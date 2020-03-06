@@ -1,41 +1,31 @@
 (async function() {
   window.apigov = (window.apigov || {});
 
-  // window.apigov.watchSearch = async function watchSearch() {
-  //   const data = await getAllAPIs();
-  //   const list = document.querySelector('.api-list');
-  //   const search = document.querySelector('.search');
-  //   if (!list) { console.warn('There is no list to add APIs to!'); return; }
+  window.apigov.watchSearch = async function watchSearch() {
+    const search = document.querySelector('.search');
 
-  //   // on key up, collect data that contains the value of input field
-  //   let listItems = '';
+    search.addEventListener( 'keyup', function( e ) {
+      console.log('key');
+      // get LI objects
+      // hide if object stringified does not contain searchVal
+      // show if object does contain search val
+      // show all if searchVal is blank
 
-  //   search.addEventListener( 'keyup', function( e ) {
-  //     list.innerHTML = ''
+      var searchVal = search.value.trim().toLowerCase();
+      var listItems = document.querySelectorAll('.api-entry');
 
-  //     // enter key
-  //     // if( e.keyCode == 13 ) {
-  //     //   search.blur();
-  //     //   return true;
-  //     // }
+      listItems.forEach(item => {
+        var str = item.innerText.toLowerCase();
 
-  //     var searchVal = search.value.trim().toLowerCase();
-  //     var results = [];
-
-  //     Object.keys(data).forEach((hash) => {
-  //       var str = JSON.stringify(data[hash]);
-  //       if(str.match(searchVal)){
-  //         results.push(data[hash])
-  //       }
-  //     });
-
-  //     results.forEach(result => {
-  //       listItems += `<li class="api-entry"><h3>Name: ${result.name}</h3><p>${result.description}</p></li>`
-  //     });
-
-  //     list.innerHTML += listItems;
-  //   });
-  // }
+        if(str.match(searchVal)) {
+          item.classList.remove('display-none');
+        }
+        else {
+          item.classList.add('display-none');
+        }
+      });
+    });
+  }
 
   window.apigov.buildAPIList = async function buildAPIList() {
     const data = await getAllAPIs();
