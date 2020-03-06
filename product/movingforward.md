@@ -2,6 +2,11 @@
 
 Are you interested in moving this effort forward and making our APIs.gov dream a reality? Here are some things to consider.
 
+### Some Reading
+Here are a couple of blog posts that talk about the basic problem we were trying to address when we started this whole thing.
+1. <a href="https://civicunrest.com/2020/01/27/where-are-government-api-directories">Where are the Government API Directories?</a>
+2. <a href="https://apievangelist.com/2017/07/27/state-of-apis-in-the-federal-government/">State of APIs in the Federal Government</a>
+
 ### User Research and Validation (please!)
 While the hackathon team that explored this idea and gave birth to this prototype did a cursory round of user research with the people present in the room from other teams, in order to really address the problems we've identified and create a product that offers value, more research is needed. Some questions to consider:
   * Did we identify the right audiences?
