@@ -1,6 +1,6 @@
 ---
 applications:
-  - submission-endpoint:
+  - apis-dot-gov-submission-endpoint:
     random-route: true
     buildpacks:
       - nodejs_buildpack
