@@ -33,10 +33,13 @@ async function createPullRequestToAddDocumentToApisJson(document) {
 
   // Tree stuff
 
-  const newCommit = await createNewCommit(commitSha, treeSha);
+  const newCommit = await createNewCommit(commitSha, newTreeSha);
 
   const newBranchHead = await updateBranchHead(branchName, newCommit.sha);
 
+  const newPullRequest = await createNewPullRequest(branchName);
+
+  return newPullRequest.url;
 };
 
 function updateBranchHead(branchName, commitSha) {
@@ -61,6 +64,38 @@ function updateBranchHead(branchName, commitSha) {
     request.on('error', reject);
 
     request.write(JSON.stringify({sha: commitSha}));
+
+    request.end();
+  });
+}
+
+function createNewPullRequest(branchName) {
+  return new Promise((resolve, reject) => {
+    const request = https.request(
+      {
+        ...BASE_OPTIONS,
+        headers: {
+          ...BASE_OPTIONS.headers,
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        path: `/repos/${REPO_OWNER}/${REPO_NAME}/pulls`
+      },
+      response => {
+        digestApiResponseIntoJson(response)
+          .then(resolve)
+          .catch(reject);
+      }
+    );
+
+    request.on('error', reject);
+
+    request.write(JSON.stringify({
+      title: "New API for you, gov'nor!",
+      head: branchName,
+      base: 'master', // need to pipe through the default branch
+      body: `Hello! A website user submitted this API and would like it to be featured on our website!`,
+    }));
 
     request.end();
   });
