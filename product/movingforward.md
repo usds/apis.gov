@@ -16,7 +16,9 @@ While the hackathon team that explored this idea and gave birth to this prototyp
   * So many more...
   
 ### Content Expansion
-Consider whether this site should include general information about APIs and their utility in the gov tech space, rather than just be a simple directory or government APIs. It seems that the site could easily accomodate being the one-stop place for really learning about APIs and finding resources for both using and creating them. Additionally, it would be worth considering if expanded inclusion of APIs from tribal, state and local governments would be worthwhile.
+Consider whether this site should include general information about APIs and their utility in the gov tech space, rather than just be a simple directory or government APIs. It seems that the site could easily accomodate being the one-stop place for really learning about APIs and finding resources for both using and creating them. The source with the most information about this today is the <a href="https://digital.gov/2013/04/30/apis-in-government/">APIs in Government</a> page on digital.gov. That page is worth a look for anyone considering this effort.
+
+Additionally, it would be worth considering if expanded inclusion of APIs from tribal, state and local governments would be worthwhile.
 
 ### Hurdles
 We know from the history of Code.gov that one of their biggest hurdles to participation is getting federal agencies to create and maintain the code.json files from each site that they use to maintain their open source project lists. We have not confirmed it, but suspect that Data.gov is facing similar issues in their efforts to catalog and track open datasets from federal agencies. User research should start to surface if using this technical approach of harvesting data from a hosted JSON file is simply not viable. If that is found to be the case, then a new technical approach will be need to be created.
