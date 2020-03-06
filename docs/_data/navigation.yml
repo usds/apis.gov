@@ -12,8 +12,8 @@
 #   links: primary
 #
 primary:
-  - text: Find an API
-    href: /apis.html
+  - text: What is this?
+    href: /about
   - text: APIs.json
     href: /apis.json
   - text: Submit an API
