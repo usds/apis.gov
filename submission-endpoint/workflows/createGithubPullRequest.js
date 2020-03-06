@@ -16,6 +16,7 @@ const BASE_OPTIONS = {
   },
 };
 
+
 async function createPullRequestToAddDocumentToApisJson(document) {
   // Create a new submission branch name with a collision-resistant name
   const branchName = `submission/${randomBytes(16).toString('hex')}`;
@@ -28,9 +29,44 @@ async function createPullRequestToAddDocumentToApisJson(document) {
 
   const newApisJsonBlob = await uploadDocumentAsBlob(document);
 
-  // Tree stuff
-
+  const uploadTree = await uploadTree(treeSha, newApisJsonBlob.sha);
 };
+
+function uploadTree(basesha, blobsha) {
+  return new Promise((resolve, reject) => {
+    const request = https.request(
+      {
+        ...BASE_OPTIONS,
+        method: 'POST',
+        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/blobs`,
+        headers: {
+          ...BASE_OPTIONS.headers,
+          'Content-Type': 'application/json',
+        },
+      },
+      response => {
+        digestApiResponseIntoJson(response)
+          .then(resolve)
+          .catch(reject);
+      }
+    )
+
+    request.on('error', reject);
+
+    request.write(JSON.stringify({
+      base_tree: basesha,
+      tree: [
+        {
+          mode: 100644, 
+          type: "blob",
+          sha: blobsha,
+          path: `/docs/api.json`
+
+        }
+      ]
+    }));
+    request.end();
+  })}
 
 function uploadDocumentAsBlob(document) {
   return new Promise((resolve, reject) => {
