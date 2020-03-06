@@ -4,7 +4,7 @@
   window.apigov.watchSearch = async function watchSearch() {
     const search = document.querySelector('.search');
 
-    search.addEventListener( 'keyup', function( e ) {
+    search.addEventListener('keyup', function( e ) {
       var searchVal = search.value.trim().toLowerCase();
       var listItems = document.querySelectorAll('.api-entry');
 
@@ -18,6 +18,43 @@
           item.classList.add('display-none');
         }
       });
+    });
+  }
+
+  window.apigov.watchSubmitForm = async function watchSubmitForm() {
+    const form = document.querySelector('.api-submit');
+
+    form.addEventListener('submit', function( e ) {
+      e.preventDefault();
+
+      var data = JSON.stringify({
+        "name": form.elements.name.value,
+        "description": form.elements.description.value,
+        "image": form.elements.image.value,
+        "humanURL": form.elements.humanURL.value,
+        "baseURL": form.elements.baseURL.value,
+        "tags": form.elements.tags.value
+      });
+
+      const response = fetch('https://apis-dot-gov-submission-endpoint-spontaneous-wildebeest-ys.app.cloud.gov', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+        body: data,
+      });
+
+      response
+        .then(received => received.json())
+        .then((data) => {
+          console.log(data);
+          window.location = '/apis.gov/success'
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+
     });
   }
 
