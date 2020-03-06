@@ -3,7 +3,7 @@ layout: page
 title: Submit an API
 ---
 
-<form accept-charset="UTF-8" action="#" method="POST">
+<form accept-charset="UTF-8" class="api-submit" action="#">
 
   <input type="text" name="name" placeholder="Name of API">
   <input type="text" name="description" placeholder="Description">
@@ -16,3 +16,9 @@ title: Submit an API
   <button type="submit">Submit</button>
 
 </form>
+
+<script type="text/javascript">
+  (async function() {
+    window.apigov.watchSubmitForm();
+  })();
+</script>
