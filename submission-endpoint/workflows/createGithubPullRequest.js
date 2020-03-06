@@ -21,12 +21,13 @@ async function createPullRequestToAddDocumentToApisJson(document) {
   const branchName = `submission/${randomBytes(16).toString('hex')}`;
 
   // Determine the base against which to build the new branch
-  const baseSha = await fetchPullRequestBaseSha();
+  const {commitSha, treeSha} = await fetchPullRequestBaseShas();
 
   // Create the new branch
-  const newBranchMetadata = await createNewBranch(branchName, baseSha);
+  const newBranchMetadata = await createNewBranch(branchName, commitSha);
 
   const newApisJsonBlob = await uploadDocumentAsBlob(document);
+
   // Tree stuff
 
 };
@@ -117,18 +118,22 @@ function fetchApisJson(commitSha) {
   });
 }
 
-async function fetchPullRequestBaseSha() {
+async function fetchPullRequestBaseShas() {
   const metadata = await fetchRepositoryMetadata();
   if (!metadata.default_branch) {
     throw new Error(`No default branch defined for ${REPO_OWNER}/${REPO_NAME}`);
   }
 
   const branchMetadata = await fetchBranchMetadata(metadata.default_branch);
-  if ((branchMetadata.commit || {}).sha) {
-    return branchMetadata.commit.sha;
+  const {commit = {}} = branchMetadata;
+  const commitSha = commit.sha;
+  const treeSha = ((commit.commit || {}).tree || {}).sha;
+  if (commitSha && treeSha) {
+    return {commitSha, treeSha};
   } else {
     throw new Error(`Unintelligible response received from GitHub branch API: ${
-      JSON.stringify(branchMetadata)} does not contain a HEAD sha.`);
+      JSON.stringify(branchMetadata)
+    } does not contain a HEAD commit and/or tree SHA.`);
   }
 }
 
