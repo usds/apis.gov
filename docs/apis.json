@@ -16,7 +16,7 @@
   "apis": [
     {
       "name": "Data at the Point of Care",
-      "description": "Data at the Point of Care is a pilot API program that enables healthcare providers to deliver high quality care directly to Medicare beneficiaries by making a patient’s Medicare claims data available to the provider for treatment needs. The information can be accessed in the existing workflow and without logging into another application or portal. Claims information can be used to confirm information, fill in gaps in care, and improve patient safety.",
+      "description": "Enables healthcare providers to make a patient’s Medicare claims data available to the provider for a patient’s treatment needs.",
       "image": "https://dpc.cms.gov/assets/top-nav-heart-5fe16cc0fca21cb303b25f95b38070b7d93f452f09e9892eec874353a4482988.svg",
       "humanURL": "https://dpc.cms.gov/",
       "baseURL": "https://sandbox.dpc.cms.gov/api",
@@ -94,7 +94,7 @@
     },
     {
       "name": "Blue Button 2.0",
-      "description": "A developer-friendly, standards-based API that enables Medicare beneficiaries to connect their claims data to the applications, services and research programs they trust. Blue Button 2.0 from CMS is an API that contains four years of Medicare Part A, B and D data for 53 million Medicare beneficiaries.",
+      "description": "Blue Button 2.0 API enables Medicare beneficiaries to connect their claims data to the applications, services and research programs they trust.",
       "humanURL": "https://bluebutton.cms.gov/",
       "baseURL": "https://bluebutton.cms.gov/",
       "tags": [
@@ -118,8 +118,8 @@
       ]
     },
     {
-      "name": "Finder API",
-      "description": "The API behind Finder.Healthcare.gov that helps you find private health plans available outside the Health Insurance Marketplace.",
+      "name": "Health Plan Finder API",
+      "description": "Helps you find private health plans available outside the Health Insurance Marketplace.",
       "humanURL": "https://developer.cms.gov/finder-api/",
       "baseURL": "https://api.finder.healthcare.gov/v3.0/",
       "tags": [
@@ -143,7 +143,7 @@
     },
     {
       "name": "trade.gov - Business Services Providers API",
-      "description": "The Business Service Providers (BSP) API is a directory of U.S. and foreign-based businesses providing services that many small and medium sized exporters require to succeed in foreign markets. Businesses can sign up to be a Service Provider on export.gov.",
+      "description": "Directory of U.S. and foreign-based businesses providing services that many small and medium sized exporters require to succeed in foreign markets.",
       "humanURL": "https://api.trade.gov/apps/store/apis/info?name=BusinessServiceProvidersAPI&version=v1&provider=dataservices@trade.gov",
       "baseURL": "https://api.trade.gov/gateway/v1/business_service_providers",
       "tags": [
@@ -308,7 +308,7 @@
     },
     {
       "name": "CPSC Violations & NEISS Data",
-      "description": "The Consumer Product Safety Commission Violations & NEISS Data API combines all of the Letters of Advice (LOA) Data and National Electronic Injury Surveillance System (NEISS) Data information into one finalized data set with hospital report information and violation of mandatory standard.",
+      "description": "Combines Letters of Advice (LOA) Data and National Electronic Injury Surveillance System (NEISS) Data information into one finalized data set with hospital report information and violation of mandatory standard.",
       "humanURL": "https://api.cpsc.gov/",
       "baseURL": "https://api.cpsc.gov/incidentdata/doc",
       "tags": [
@@ -333,7 +333,7 @@
     },
     {
       "name": "HHS Media Services API",
-      "description": "With the HHS Feed Request API, you can subscribe to news feeds on HHS. The feed interface requires a feed ID, which is generated on a per-feed basis in the storefront.",
+      "description": "Subscribe to HHS news feeds.",
       "humanURL": "https://api.digitalmedia.hhs.gov/",
       "baseURL": "https://api.digitalmedia.hhs.gov/",
       "tags": [
