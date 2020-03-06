@@ -5,12 +5,6 @@
     const search = document.querySelector('.search');
 
     search.addEventListener( 'keyup', function( e ) {
-      console.log('key');
-      // get LI objects
-      // hide if object stringified does not contain searchVal
-      // show if object does contain search val
-      // show all if searchVal is blank
-
       var searchVal = search.value.trim().toLowerCase();
       var listItems = document.querySelectorAll('.api-entry');
 

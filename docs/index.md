@@ -6,17 +6,11 @@ title: APIs.gov Registry
 
 <h2 class="text-center">Find publicly available APIs offered by Federal Government Agencies</h2>
 
-<div class="grid-container">
-<form class="usa-search usa-search--small">
-  <div role="search">
-    <label class="usa-sr-only" for="search-field-small">Search</label>
-    <input class="usa-input search" id="search-field-small" type="search" name="search">
-    <button class="usa-button" type="submit">
-      <span class="usa-sr-only">Search</span>
-    </button>
+<section>
+  <div class="grid-row">
+    <input class="margin-x-auto usa-input text-center search" id="search-field-small" type="search" name="search" placeholder="Search">
   </div>
-</form>
-</div>
+</section>
 
 <div>
   <ul class="usa-list usa-list--unstyled api-list" style="min-width: 90%;">
