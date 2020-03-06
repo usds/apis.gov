@@ -6,6 +6,8 @@ title: About APIs.gov
 ## What is this?
 APIs.gov is directory and registry for Application Programming Interfaces (APIs) created or maintained by agencies within the federal government. Here you will find a searchable list for dicovering these APIs, as well as a hosted machine-readable list of APIs in our <a href="/apis.json">apis.json</a> file.
 
+If you aren't familiar with APIs, you can find out more information about them, and their usefulness in goverment technology at the <a href="https://digital.gov/2013/04/30/apis-in-government/">APIs in Government</a> page from Digital.gov.
+
 ## What can I do here?
 You can discover government APIs published by numerous agencies within the federal ecosystem. Additionally, you can search by keyword and get basic information about each API, such as the link to documentation and the point of contact for the API.
 
