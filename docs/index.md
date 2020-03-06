@@ -8,7 +8,7 @@ title: APIs.gov Registry
 
 <section>
   <div class="grid-row">
-    <input class="margin-x-auto usa-input text-center search" id="search-field-small" type="search" name="search" placeholder="Search">
+    <input class="margin-x-auto usa-input text-center search" autofocus="autofocus" id="search-field-small" type="search" name="search" placeholder="Search">
   </div>
 </section>
 
