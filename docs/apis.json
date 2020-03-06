@@ -142,7 +142,7 @@
       ]
     },
     {
-      "name": "trade.gov - Busines Services Providers API",
+      "name": "trade.gov - Business Services Providers API",
       "description": "The Business Service Providers (BSP) API is a directory of U.S. and foreign-based businesses providing services that many small and medium sized exporters require to succeed in foreign markets. Businesses can sign up to be a Service Provider on export.gov.",
       "humanURL": "https://api.trade.gov/apps/store/apis/info?name=BusinessServiceProvidersAPI&version=v1&provider=dataservices@trade.gov",
       "baseURL": "https://api.trade.gov/gateway/v1/business_service_providers",
@@ -156,6 +156,31 @@
         {
           "type": "X-signup",
           "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "CPSC Violations & NEISS Data",
+      "description": "The Consumer Product Safety Commission Violations & NEISS Data API combines all of the Letters of Advice (LOA) Data and National Electronic Injury Surveillance System (NEISS) Data information into one finalized data set with hospital report information and violation of mandatory standard.",
+      "humanURL": "https://api.cpsc.gov/",
+      "baseURL": "https://api.cpsc.gov/incidentdata/doc",
+      "tags": [
+        "cpsc",
+        "violations",
+        "neiss",
+        "media",
+        "consumer",
+        "product"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://api.data.gov/"
+        }
+      ],
+      "contact": [
+        {
+          "email": "abc@data.gov"
         }
       ]
     }
