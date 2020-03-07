@@ -1,0 +1,369 @@
+{
+  "name": "APIs.gov",
+  "description": "This is an inventory of US government APIs currntly maintained by the US Digital Service.",
+  "image": "https://www.usds.gov/assets/img/usds-logo-footer.svg",
+  "tags": [
+    "government",
+    "API",
+    "US",
+    "US Digital Service",
+    "USDS"
+  ],
+  "created": "2020-03-05",
+  "modified": "220-03-05",
+  "url": "https://usds.github.io/apis.gov/apis.json",
+  "specificationVersion": "0.15",
+  "apis": [
+    {
+      "name": "Data at the Point of Care",
+      "description": "Enables healthcare providers to make a patient’s Medicare claims data available to the provider for a patient’s treatment needs.",
+      "image": "https://dpc.cms.gov/assets/top-nav-heart-5fe16cc0fca21cb303b25f95b38070b7d93f452f09e9892eec874353a4482988.svg",
+      "humanURL": "https://dpc.cms.gov/",
+      "baseURL": "https://sandbox.dpc.cms.gov/api",
+      "tags": [
+        "medicare",
+        "claims",
+        "health",
+        "cms",
+        "fhir",
+        "hhs"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://dpc.cms.gov/users/sign_up"
+        },
+        {
+          "type": "OpenAPI",
+          "url": "https://sandbox.dpc.cms.gov/api/swagger"
+        },
+        {
+          "type": "FHIR-IG",
+          "url": "https://dpc.cms.gov/ig/index.html"
+        }
+      ],
+      "contact": [
+        {
+          "email": "info@dpc.cms.gov"
+        }
+      ]
+    },
+    {
+      "name": "Address Information - USPS Web Tools",
+      "description": "Provides access to APIs that are being tracked across the API Evangelist network.",
+      "humanURL": "https://www.usps.com/business/web-tools-apis/address-information-api.htm",
+      "baseURL": "https://secure.shippingapis.com",
+      "tags": [
+        "USPS",
+        "address",
+        "post"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://registration.shippingapis.com/"
+        }
+      ],
+      "contact": [
+        {
+          "X-contact": "https://emailus.usps.com/",
+          "phone": "1-800-344-7779"
+        }
+      ]
+    },
+    {
+      "name": "Beneficiary Claims Data API",
+      "description": "Shared Savings Program ACOs can use this FHIR-based API to retrieve bulk Medicare claims data related to their assignable or prospectively assigned beneficiaries.",
+      "humanURL": "https://bcda.cms.gov/",
+      "baseURL": "https://sandbox.bcda.cms.gov/",
+      "tags": [
+        "medicare",
+        "claims",
+        "health",
+        "cms",
+        "fhir",
+        "hhs",
+        "aco"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://registration.shippingapis.com/"
+        }
+      ]
+    },
+    {
+      "name": "Blue Button 2.0",
+      "description": "Blue Button 2.0 API enables Medicare beneficiaries to connect their claims data to the applications, services and research programs they trust.",
+      "humanURL": "https://bluebutton.cms.gov/",
+      "baseURL": "https://bluebutton.cms.gov/",
+      "tags": [
+        "cms",
+        "hhs",
+        "health",
+        "medicare",
+        "claims",
+        "fhir"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://bluebutton.cms.gov/developers/#production-api-access"
+        }
+      ],
+      "contact": [
+        {
+          "email": "bluebuttonapi@cms.hhs.gov "
+        }
+      ]
+    },
+    {
+      "name": "Health Plan Finder API",
+      "description": "Helps you find private health plans available outside the Health Insurance Marketplace.",
+      "humanURL": "https://developer.cms.gov/finder-api/",
+      "baseURL": "https://api.finder.healthcare.gov/v3.0/",
+      "tags": [
+        "cms",
+        "hhs",
+        "health",
+        "marketplace",
+        "insurance"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://bluebutton.cms.gov/developers/#production-api-access"
+        }
+      ],
+      "contact": [
+        {
+          "email": "bluebuttonapi@cms.hhs.gov "
+        }
+      ]
+    },
+    {
+      "name": "trade.gov - Business Services Providers API",
+      "description": "Directory of U.S. and foreign-based businesses providing services that many small and medium sized exporters require to succeed in foreign markets.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=BusinessServiceProvidersAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/business_service_providers",
+      "tags": [
+        "trade.gov",
+        "service providers",
+        "business",
+        "exports"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov Consolidated Screening List API",
+      "description": "Consolidates export screening lists of the Departments of Commerce, State and the Treasury into a single data feed as an aid to industry in conducting electronic screens of potential parties to regulated transactions.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=ConsolidatedScreeningListAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/consolidated_screening_list",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "screening",
+        "trade",
+        "exports"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov De Minimis API",
+      "description": "Provides data about the De Minimis amount and the Value Added Tax (VAT) amount that products may be subject to when exported to foreign countries.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=DeMinimisAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/de_minimis",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "VAT",
+        "tax",
+        "duties",
+        "tariffs"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov FAQs on Exporting API",
+      "description": "Includes more than 200 commonly asked questions about exporting. The answers provided are from government experts that specialize in unique aspects of trade.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=FAQsOnExportingAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/ita_faqs\n",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "FAQ",
+        "questions",
+        "answers",
+        "trade",
+        "exports"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov FTA Tariff Rates API",
+      "description": "Provides data about each country with whom the United States has a Free Trade Agreement (FTA).",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=FTATariffRatesAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/tariff_rates",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "tariffs",
+        "trade"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov ITA Offices and Centers API",
+      "description": "Provides contact and address information for all of ITA's domestic and international export assistance centers.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=ITAOfficesAndCentersAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/ita_office_locations",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "offices",
+        "addresses",
+        "contact information",
+        "exports",
+        "trade"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov ITA Trade Events API",
+      "description": "Provides data on events for U.S. businesses interested in selling their products and services overseas. These events include industry conferences, webinars, lectures, and trade missions organized by ITA and other trade agencies.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=TradeEventsAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/trade_events",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "trade",
+        "events",
+        "conferences",
+        "exports",
+        "webinars"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "trade.gov Zip Code to USEAC API",
+      "description": "Provides direct access to the U.S. Export Assistance Centers (USEACs) that have been assigned to all of the 40,000+ zip codes in the United States.",
+      "humanURL": "https://api.trade.gov/apps/store/apis/info?name=ZipCodeToUseacAPI&version=v1&provider=dataservices@trade.gov",
+      "baseURL": "https://api.trade.gov/gateway/v1/ita_zipcode_to_post",
+      "tags": [
+        "trade.gov",
+        "DoC",
+        "commerce",
+        "trade",
+        "exports",
+        "assistance",
+        "zip codes"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://internationaltradeadministration.github.io/DevPortalMessages/GettingStarted_NewAPIStore"
+        }
+      ]
+    },
+    {
+      "name": "CPSC Violations & NEISS Data",
+      "description": "Combines Letters of Advice (LOA) Data and National Electronic Injury Surveillance System (NEISS) Data information into one finalized data set with hospital report information and violation of mandatory standard.",
+      "humanURL": "https://api.cpsc.gov/",
+      "baseURL": "https://api.cpsc.gov/incidentdata/doc",
+      "tags": [
+        "cpsc",
+        "violations",
+        "neiss",
+        "media",
+        "consumer",
+        "product"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": "https://api.data.gov/"
+        }
+      ],
+      "contact": [
+        {
+          "email": "abc@data.gov"
+        }
+      ]
+    },
+    {
+      "name": "HHS Media Services API",
+      "description": "Subscribe to HHS news feeds.",
+      "humanURL": "https://api.digitalmedia.hhs.gov/",
+      "baseURL": "https://api.digitalmedia.hhs.gov/",
+      "tags": [
+        "cms",
+        "hhs",
+        "health",
+        "media",
+        "news",
+        "campaigns"
+      ],
+      "properties": [
+        {
+          "type": "X-signup",
+          "url": ""
+        }
+      ],
+      "contact": [
+        {
+          "email": "abc@hhs.gov"
+        }
+      ]
+    },
+    {
+      "foo": "bar"
+    }
+  ],
+  "maintainers": [
+    {
+      "FN": "Shelby",
+      "email": "shelby.switzer@cms.hhs.gov"
+    }
+  ]
+}
