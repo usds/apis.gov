@@ -7,21 +7,23 @@ const REPO_NAME = 'apis.gov';
 
 const BASE_OPTIONS = {
   hostname: 'api.github.com',
-  auth: `${process.env.GITHUB_BOT_USERNAME}:${process.env.GITHUB_BOT_API_TOKEN}`,
+  auth: `${process.env.GITHUB_API_USERNAME}:${process.env.GITHUB_API_TOKEN}`,
   headers: {
     Accept: 'application/json',
     // GitHub recommends using a username as the useragent string for any
     // requests sent to their API for traceability
-    'User-Agent': process.env.GITHUB_BOT_USERNAME,
+    'User-Agent': process.env.GITHUB_API_USERNAME,
   },
 };
+
+exports.createPullRequestToAddDocumentToApisJson = createPullRequestToAddDocumentToApisJson;
 
 async function createPullRequestToAddDocumentToApisJson(document) {
   // Create a new submission branch name with a collision-resistant name
   const branchName = `submission/${randomBytes(16).toString('hex')}`;
 
-  // Determine the base against which to build the new branch
-  const {commitSha, treeSha} = await fetchPullRequestBaseShas();
+  // Determine the default branch and its current commit and tree SHAs
+  const {commitSha, defaultBranch, treeSha} = await fetchPullRequestBaseShas();
 
   // Create the new branch
   const newBranchMetadata = await createNewBranch(branchName, commitSha);
@@ -29,20 +31,21 @@ async function createPullRequestToAddDocumentToApisJson(document) {
   const apisJson = await fetchApisJson(commitSha);
   apisJson.apis.push(document);
 
-  const newApisJsonBlob = await uploadDocumentAsBlob(apisJson);
-
-  const newTree = await uploadTree(treeSha, newApisJsonBlob.sha);
+  const newTree = await uploadTree(treeSha, apisJson);
 
   const newCommit = await createNewCommit(commitSha, newTree.sha);
 
   const newBranchHead = await updateBranchHead(branchName, newCommit.sha);
 
-  const newPullRequest = await createNewPullRequest(branchName);
+  const newPullRequest = await createNewPullRequest(branchName, defaultBranch);
 
   return newPullRequest.url;
 };
 
 function updateBranchHead(branchName, commitSha) {
+  console.log(`Updating branch [${branchName}] to use commit [${
+    commitSha}] as its head.`);
+
   return new Promise((resolve, reject) => {
     const request = https.request(
       {
@@ -69,7 +72,10 @@ function updateBranchHead(branchName, commitSha) {
   });
 }
 
-function createNewPullRequest(branchName) {
+function createNewPullRequest(fromBranch, intoBranch) {
+  console.log(`Creating a new pull request to merge [${fromBranch}] into [${
+    intoBranch}]`);
+
   return new Promise((resolve, reject) => {
     const request = https.request(
       {
@@ -77,6 +83,7 @@ function createNewPullRequest(branchName) {
         headers: {
           ...BASE_OPTIONS.headers,
           'Content-Type': 'application/json',
+          'Accept': 'application/vnd.github.shadow-cat-preview+json'
         },
         method: 'POST',
         path: `/repos/${REPO_OWNER}/${REPO_NAME}/pulls`
@@ -92,8 +99,8 @@ function createNewPullRequest(branchName) {
 
     request.write(JSON.stringify({
       title: "New API for you, gov'nor!",
-      head: branchName,
-      base: 'master', // need to pipe through the default branch
+      head: fromBranch,
+      base: intoBranch,
       body: `Hello! A website user submitted this API and would like it to be featured on our website!`,
     }));
 
@@ -102,6 +109,9 @@ function createNewPullRequest(branchName) {
 }
 
 function createNewCommit(parentCommitSha, treeSha) {
+  console.log(`Creating a new commit from tree [${treeSha}] with parent [${
+    parentCommitSha}]`);
+
   return new Promise((resolve, reject) => {
     const request = https.request(
       {
@@ -111,7 +121,7 @@ function createNewCommit(parentCommitSha, treeSha) {
           'Content-Type': 'application/json',
         },
         method: 'POST',
-        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/commit`
+        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/commits`
       },
       response => {
         digestApiResponseIntoJson(response)
@@ -126,24 +136,22 @@ function createNewCommit(parentCommitSha, treeSha) {
       message: 'Update apis.json with new API submission',
       tree: treeSha,
       parents: [parentCommitSha],
-      author: {
-        name: 'apis.gov submissions bot',
-        email: 'fake@notreal.net',
-        date: (new Date).toISOString(),
-      }
     }));
 
     request.end();
   });
 }
 
-function uploadTree(basesha, blobsha) {
+function uploadTree(baseSha, newApisJson) {
+  console.log(`Creating a new tree with the updated /docs/apis.json `
+    + `from tree [${baseSha}]`);
+
   return new Promise((resolve, reject) => {
     const request = https.request(
       {
         ...BASE_OPTIONS,
         method: 'POST',
-        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/blobs`,
+        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/trees`,
         headers: {
           ...BASE_OPTIONS.headers,
           'Content-Type': 'application/json',
@@ -157,13 +165,13 @@ function uploadTree(basesha, blobsha) {
     )
     request.on('error', reject);
     request.write(JSON.stringify({
-      base_tree: basesha,
+      base_tree: baseSha,
       tree: [
         {
-          mode: 100644,
-          type: "blob",
-          sha: blobsha,
-          path: `/docs/api.json`
+          mode: '100644',
+          type: 'blob',
+          content: JSON.stringify(newApisJson, undefined, '  '),
+          path: 'docs/api.json',
         }
       ]
     }));
@@ -171,36 +179,8 @@ function uploadTree(basesha, blobsha) {
   });
 }
 
-function uploadDocumentAsBlob(document) {
-  return new Promise((resolve, reject) => {
-    const request = https.request(
-      {
-        ...BASE_OPTIONS,
-        method: 'POST',
-        path: `/repos/${REPO_OWNER}/${REPO_NAME}/git/blobs`,
-        headers: {
-          ...BASE_OPTIONS.headers,
-          'Content-Type': 'application/json',
-        },
-      },
-      response => {
-        digestApiResponseIntoJson(response)
-          .then(resolve)
-          .catch(reject);
-      }
-    );
-
-    request.on('error', reject);
-
-    request.write(JSON.stringify({
-      encoding: 'utf-8',
-      content: JSON.stringify(document),
-    }));
-    request.end();
-  });
-}
-
 function createNewBranch(name, baseSha) {
+  console.log(`Creating a new branch named [${name}] at commit [${baseSha}]`);
   return new Promise((resolve, reject) => {
     const request = https.request(
       {
@@ -231,6 +211,7 @@ function createNewBranch(name, baseSha) {
 }
 
 function fetchApisJson(commitSha) {
+  console.log(`Fetching content of /docs/apis.json at commit [${commitSha}]`);
   return new Promise((resolve, reject) => {
     const request = https.request(
       {
@@ -242,7 +223,7 @@ function fetchApisJson(commitSha) {
         digestApiResponseIntoJson(response)
           .then(fileData => {
             resolve(JSON.parse(
-              Buffer.from(fileData.contents, fileData.encoding)
+              Buffer.from(fileData.content, fileData.encoding)
                 .toString()
                 .trim()
             ));
@@ -268,7 +249,7 @@ async function fetchPullRequestBaseShas() {
   const commitSha = commit.sha;
   const treeSha = ((commit.commit || {}).tree || {}).sha;
   if (commitSha && treeSha) {
-    return {commitSha, treeSha};
+    return {commitSha, treeSha, defaultBranch: metadata.default_branch};
   } else {
     throw new Error(`Unintelligible response received from GitHub branch API: ${
       JSON.stringify(branchMetadata)
@@ -320,13 +301,7 @@ function fetchBranchMetadata(branchName) {
 
 function digestApiResponseIntoJson(response) {
   return new Promise((resolve, reject) => {
-    if (response.statusCode < 200 || request.statusCode > 299) {
-      reject(new Error(`Received unexpected status code from GitHub API: ${
-        response.statusCode} received but expected 200`));
-      return;
-    }
-
-    if (response.headers['content-type'] !== 'application/json') {
+    if (!response.headers['content-type'] || response.headers['content-type'].indexOf('application/json') !== 0) {
       reject(new Error(`Received unexpected content type from GitHub API: ${
         response.headers['content-type']
       } received but expected 'application/json.'`));
@@ -334,14 +309,30 @@ function digestApiResponseIntoJson(response) {
     }
 
     const chunks = [];
-    readable.on('data', chunk => {
+    response.on('data', chunk => {
       chunks.push(Buffer.from(chunk).toString());
     });
 
-    readable.on('end', () => {
-      resolve(JSON.parse(chunks.join()));
+    response.on('end', () => {
+      let parsed;
+      try {
+        parsed = JSON.parse(chunks.join(''));
+      } catch (e) {
+        console.error(e);
+        reject(e);
+        return;
+      }
+
+      if (response.statusCode < 200 || response.statusCode > 299) {
+        console.error(`Error response received from Github: ${response.statusCode}`);
+        console.error(parsed);
+        reject(new Error(`Received unexpected status code from GitHub API: ${
+          response.statusCode} received but expected 200`));
+      } else {
+        resolve(parsed);
+      }
     });
 
-    readable.on('error', reject);
+    response.on('error', reject);
   });
 }

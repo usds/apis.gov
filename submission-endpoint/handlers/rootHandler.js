@@ -1,6 +1,7 @@
 const {STATIC_SITE_ORIGIN} = require('./constants');
 const {httpError} = require('./httpError');
 const {isValidApisJsonDocument} = require('../validator');
+const {createPullRequestToAddDocumentToApisJson} = require('../workflows/createGithubPullRequest');
 
 const MAX_UPLOAD_SECONDS = 120;
 const MAX_DOCUMENT_SIZE = 2 * 1024 * 1024;
@@ -30,9 +31,10 @@ exports.handlerFunc = (req, res) => {
       }
 
       throw httpError('Submitted API JSON did not match the schema', 422);
-    }).then(parsedAndValidated => {
+    }).then(createPullRequestToAddDocumentToApisJson)
+    .then(pullRequestUrl => {
       res.writeHead(200, ERROR_HEADERS);
-      res.end(JSON.stringify(parsedAndValidated));
+      res.end(JSON.stringify({pullRequestUrl}));
     }).catch(err => {
       console.error(err);
       res.writeHead(err.statusCode || 500, ERROR_HEADERS);
