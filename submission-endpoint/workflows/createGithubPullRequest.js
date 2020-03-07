@@ -170,8 +170,8 @@ function uploadTree(baseSha, newApisJson) {
         {
           mode: '100644',
           type: 'blob',
-          content: JSON.stringify(newApisJson, undefined, '  '),
-          path: 'docs/api.json',
+          content: JSON.stringify(newApisJson, undefined, '  ') + "\n",
+          path: 'docs/apis.json',
         }
       ]
     }));
