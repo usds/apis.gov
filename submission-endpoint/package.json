@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/usds/apis.gov/issues"
   },
-  "homepage": "https://github.com/usds/apis.gov#readme"
+  "homepage": "https://github.com/usds/apis.gov#readme",
+  "engines": {
+    "node": "12.x"
+  }
 }
