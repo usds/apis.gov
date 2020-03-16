@@ -1,7 +1,0 @@
----
-applications:
-  - apis-dot-gov-submission-endpoint:
-    random-route: true
-    buildpacks:
-      - nodejs_buildpack
-    memory: 128M

@@ -1,1 +1,0 @@
-exports.isValidApisJsonDocument = (document) => true;
