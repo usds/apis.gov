@@ -169,7 +169,7 @@ namespace Gov.Apis.SubmissionEndpoint.Services
                         IgnoreNullValues = true,
                         // Without the unsafe encoder, ampersands get rendered as a UTF-8 escape sequence (`\u0026`)
                         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    }),
+                    }) + "\n",
                 });
             return blob.Sha;
         }
