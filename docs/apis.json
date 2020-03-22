@@ -66,8 +66,8 @@
       ],
       "contact": [
         {
-          "X-contact": "https://emailus.usps.com/",
-          "phone": "1-800-344-7779"
+          "Url": "https://emailus.usps.com/",
+          "Tel": "1-800-344-7779"
         }
       ]
     },
