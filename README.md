@@ -10,7 +10,11 @@ First, you'll need some prerequisites:
 
 `brew install opam` (The OCaml Package manager & ecosystem)
 
+(Note the install is for your current version of macOS)
+
 Then once that is finished (be sure to follow the homebrew instructions for OPAM after installing): 
+Create default folder ~/.opam
+`opam init`
 
 `opam install dune`
 
